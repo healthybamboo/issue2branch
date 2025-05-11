@@ -1,0 +1,2 @@
+# issue2branch
+issueのタイトルやラベルから自動的にブランチ名を生成するGithubActions
