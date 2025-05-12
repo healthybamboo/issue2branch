@@ -62,14 +62,10 @@ Toolkit.run(
             await exec('git', ['checkout', '-b', branchName]);
             await exec('git', ['push', 'origin', branchName]);
 
-            // Commant the branch name to the Issue
-            const response = await tools.github.issues.createComment({
-                ...tools.context.repo,
-                issue_number: issueNumber,
-                body: `Branch name generated: ${branchName}`
-            })
-            tools.log.info('Branch name generated successfully');
-            tools.exit.success('Success');
+            // Output the branch name
+            tools.log.info('Branch name:', branchName);
+            tools.log.info('Branch created and pushed successfully');
+            tools.exit.success(`Branch name: ${branchName}`);
         } catch (error) {
             tools.log.error('Error:', error);
             tools.exit.failure('Failure');
