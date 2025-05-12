@@ -8,8 +8,8 @@ inputs:
     description: "The system prompt to use for the branch name"
     required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  arguments:
-    openai_api_key: ${{ inputs.openai_api_key }}
-    system_prompt: ${{ inputs.system_prompt }}
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.openai_api_key }}
+    - ${{ inputs.system_prompt }}
