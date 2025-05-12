@@ -1,0 +1,12 @@
+name: Create branch from issue name
+description: Create a branch from the issue name, issue number, and other information.
+inputs:
+  openai_api_key:
+    description: "The OpenAI API key to use for the branch name"
+    required: true
+  system_prompt:
+    description: "The system prompt to use for the branch name"
+    required: false
+runs:
+  using: 
+  steps:
