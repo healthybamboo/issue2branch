@@ -65,7 +65,8 @@ Toolkit.run(
             // Output the branch name
             tools.log.info('Branch name:', branchName);
             tools.log.info('Branch created and pushed successfully');
-            tools.exit.success(`Branch name: ${branchName}`);
+            tools.outputs.branch_name = branchName;
+            tools.exit.success(`SBranch name: ${branchName}`);
         } catch (error) {
             tools.log.error('Error:', error);
             tools.exit.failure('Failure');
