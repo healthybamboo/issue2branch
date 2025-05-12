@@ -56,6 +56,9 @@ Toolkit.run(
 
             // Create and push the branch
             const { exec } = tools;
+            await exec('git', ['config', '--global', '--add', 'safe.directory', `${tools.workspace}`]);
+            await exec('git', ['config', 'user.name', 'github-actions']);
+            await exec('git', ['config', 'user.email', 'actions@github.com']);
             await exec('git', ['checkout', '-b', branchName]);
             await exec('git', ['push', 'origin', branchName]);
 
