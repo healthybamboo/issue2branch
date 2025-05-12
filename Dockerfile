@@ -11,6 +11,5 @@ RUN apt update && apt install -y git git-lfs && yarn
 
 COPY . .
 
-RUN yarn build && ls -la dist
-
-ENTRYPOINT ["node", "dist/index.js"]
+RUN yarn build
+ENTRYPOINT ["node", "/dist/index.js"]
